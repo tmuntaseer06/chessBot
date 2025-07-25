@@ -214,7 +214,7 @@ def build_move_vocab(moves):
 
 if __name__ == "__main__":
     # Configuration
-    PGN_PATH = "data/lichess_db_standard_rated_2015-08.pgn"
+    PGN_PATH = "data/lichess_db_standard_rated_2015-08.pgn" # be sure to change this
     STOCKFISH_PATH = "stockfish/stockfish-windows-x86-64-avx2.exe"  # Update this path
     MAX_GAMES = 10000  # Set to None for all games
     DEPTH = 10  # Stockfish analysis depth
