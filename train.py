@@ -34,16 +34,6 @@ def train(model, dataset, epochs=10, batch_size=64, lr=1e-3):
         print(f"Epoch {epoch+1}/{epochs} - Loss: {total_loss:.4f}")
     return model
 
-def predict_best_move(model, evaluation,board_tensor, idx_to_move):
-    model.eval()
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    with torch.no_grad():
-        sample_board = board_tensor.unsqueeze(0).to(device)
-        sample_eval = torch.tensor([[evaluation]]).to(device)
-        logits = model(sample_board, sample_eval)
-        predicted_index = torch.argmax(logits, dim=1).item()
-        predicted_move = idx_to_move[predicted_index]
-    return predicted_move
 
 from functions import load_processed_data
 from dataset import ChessMoveDataset
