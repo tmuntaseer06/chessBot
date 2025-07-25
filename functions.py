@@ -9,7 +9,7 @@ import os
 
 
 
-engine = chess.engine.SimpleEngine.popen_uci(['stockfish/stockfish-windows-x86-64-avx2.exe'])
+engine = chess.engine.SimpleEngine.popen_uci('stockfish/stockfish-windows-x86-64-avx2.exe')
 def board_to_tensor(board):
     """Convert chess board to 13-channel tensor"""
     tensor = np.zeros((13, 8, 8))
